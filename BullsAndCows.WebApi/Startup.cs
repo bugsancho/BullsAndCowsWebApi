@@ -6,7 +6,6 @@ using Microsoft.Owin.Cors;
 using Owin;
 
 [assembly: OwinStartup(typeof(BullsAndCows.WebApi.Startup))]
-
 namespace BullsAndCows.WebApi
 {
     public partial class Startup
