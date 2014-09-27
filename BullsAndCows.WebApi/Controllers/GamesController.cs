@@ -292,7 +292,7 @@ namespace BullsAndCows.WebApi.Controllers
             if (isUserAuthenticated)
             {
                 var player = this.GetAuthenticatedPlayer();
-                games = this.data.Games.All().Where(g => (g.GameState == GameState.WaitingForOpponent) || (((g.BluePlayerId == player.Id) ^ (g.RedPlayerId == player.Id)) && g.BluePlayerId != null)); // No ordering by game state because we take only the games with state that is 'Waiting for opponent'
+                games = this.data.Games.All().Where(g => (g.GameState == GameState.WaitingForOpponent) || (((g.BluePlayerId == player.Id) ^ (g.RedPlayerId == player.Id)) && g.BluePlayerId != null && g.GameState != GameState.GameOver)); // No ordering by game state because we take only the games with state that is 'Waiting for opponent'
             }
             else
             {
